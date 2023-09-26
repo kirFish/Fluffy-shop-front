@@ -11,9 +11,9 @@ const LoadSession = (): User => {
     return "Anonymous"
 }
 
-export const login = createAction<[string,string]>('LOGIN');
+export const login = createAction<User>('LOGIN');
 
-export const logout = createAction<[string,string]>('LOGOUT');
+export const logout = createAction('LOGOUT');
 
 export const UserReducer = createReducer<User>(LoadSession(),(b) => {
     b.addCase(login,(user_state,action) => {
