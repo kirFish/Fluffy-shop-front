@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import { Provider as StoreProvider } from "react-redux";
 import { Layout } from './Layout';
 import {
@@ -13,6 +12,7 @@ import Store from "./Store";
 import Index from './pages/Index';
 import GoodDetails from './pages/GoodDetails';
 import Login from './pages/Login';
+import Favs from './pages/Favs';
 
 const router = createBrowserRouter([
   {
@@ -26,16 +26,19 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/favorites",
+    element: <Favs />
   }
-]);
+].map(
+  (el)=> ({...el, element: <Layout>{el.element}</Layout> })
+));
 
 function App() {
-
   return (
     <StoreProvider store={Store}>
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <RouterProvider router={router} />
     </StoreProvider>
   );
 }

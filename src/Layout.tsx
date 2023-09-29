@@ -1,8 +1,11 @@
 import Header from "./components/Header"
+import {Container} from "./Layout.styles"
 
 export const Layout = ({children}: React.PropsWithChildren) => (
     <>
         <Header />
-        {children}
+        <Container>
+            {children}
+        </Container>
     </>
 )

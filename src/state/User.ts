@@ -11,20 +11,20 @@ const LoadSession = (): User => {
     return "Anonymous"
 }
 
-export const login = createAction<User>('LOGIN');
+export const Login = createAction<User>('LOGIN');
 
-export const logout = createAction('LOGOUT');
+export const Logout = createAction('LOGOUT');
 
 export const UserReducer = createReducer<User>(LoadSession(),(b) => {
-    b.addCase(login,(user_state,action) => {
+    b.addCase(Login,(user_state,action) => {
         if (user_state === "Anonymous") {
-            //todo
+            return action.payload
         } else {
             return user_state;
         }
     });
 
-    b.addCase(logout,() => {
+    b.addCase(Logout,() => {
         return "Anonymous"
     })
 })
