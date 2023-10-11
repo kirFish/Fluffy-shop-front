@@ -9,9 +9,9 @@ type Props = {
 export default function({height}: Props): JSX.Element {
     return <Row height={height}>
         <Img src="fluffy.png" />
-        {/* <Fill /> */}
+        <Fill />
         <SearchBar />
-        {/* <Fill /> */}
+        <Fill />
         <Cabinet />
     </Row>
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Row = styled.div<{height: string}>`
-display: flexbox;
+display: flex;
 position: absolute;
 width: 100%;
 ${props => `height: ${props.height}`};
@@ -19,5 +19,6 @@ vertical-align: bottom;
 
 export const Fill = styled.span`
 display: inline-block;
-width: 40%;
+width: calc(100% / 3);
+min-width: 0%;
 `;

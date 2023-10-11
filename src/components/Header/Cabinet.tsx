@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 const Container = styled.span`
     justify-self: end;
+    color: white;
 `;
 
 const Cabinet = () => {
