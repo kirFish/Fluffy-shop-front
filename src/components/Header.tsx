@@ -1,13 +1,17 @@
-import { Row } from "./Header.styles"
+import { Row, Img, Fill } from "./Header.styles"
 import Cabinet from "./Header/Cabinet";
 import SearchBar from "./Header/SearchBar";
 
-type Props = {};
+type Props = {
+    height: string
+};
 
-export default function({}: Props): JSX.Element {
-    return <Row>
-        Logo // <img src="fluffy.png" width="28pt" height="inherit"></img>
-        <SearchBar></SearchBar>
-        <Cabinet></Cabinet>
+export default function({height}: Props): JSX.Element {
+    return <Row height={height}>
+        <Img src="fluffy.png" />
+        {/* <Fill /> */}
+        <SearchBar />
+        {/* <Fill /> */}
+        <Cabinet />
     </Row>
 }
